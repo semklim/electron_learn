@@ -61,7 +61,7 @@ function getInput () {
     return undefined;
   }
 
-  if(Number(input.value) > numbers){
+  if(Number(input.value) > numbers || Number(input.value) <= 0){
 	document.body.style.backgroundColor = '#444';
 	return undefined;
   }
