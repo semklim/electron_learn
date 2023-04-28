@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		body,html{
+			-webkit-app-region: drag;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		body{
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		const { ipcRenderer } = require(`electron`);
+		ipcRenderer.on('img', (event, arg) => {
+			document.body.setAttribute('style', `background-image: url(${arg});`);
+		});
+	</script>
+</body>
+</html>

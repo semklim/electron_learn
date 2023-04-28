@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+			body,html{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.container{
+			height: 80%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		.btn > button{
+			margin-top: 10px;
+
+			width: 50px;
+			height: 30px;
+			font-size: 25px;
+		}
+		.drag{
+			-webkit-app-region: drag;
+			background-color: brown;
+			width: 100%;
+			height: 20%;
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			font-weight: 900;
+		}
+	</style>
+</head>
+<body>
+<div class="drag"> Drag me</div>
+<div class="container">
+	<div id="countWin"></div>
+	<div class="input"><input type="text" id="input"></div>
+	<div class="btn">
+		<button id="left"> <-- </button>
+		<button id="right"> --> </button>
+	</div>
+</div>
+<script>
+const { ipcRenderer } = require(`electron`);
+let numbers = 0;
+
+left.addEventListener(`click`, () => ipcRenderer.send('left-move', getInput()));
+right.addEventListener(`click`, () => ipcRenderer.send('right-move', getInput()));
+
+ipcRenderer.on('count', (event, arg) => {
+	numbers = Number(arg);
+	countWin.textContent = "Картинок: " + arg;
+});
+
+function getInput () {
+  if (!input.value || isNaN(input.value)) { 
+    return undefined;
+  }
+
+  if(Number(input.value) > numbers){
+	document.body.style.backgroundColor = '#444';
+	return undefined;
+  }
+  document.body.style.backgroundColor = '#fff';
+  return Number(input.value) + 2;
+};
+</script>
+</body>
+</html>
