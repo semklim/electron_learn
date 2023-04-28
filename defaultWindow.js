@@ -12,7 +12,7 @@ function createWindow ({ loadFile, positionX, positionY, width, height }) {
 		},
 		autoHideMenuBar: true,
 		frame: false,
-		resizable: false,
+		// resizable: false,
 		alwaysOnTop: true
 	});
 	if (typeof loadFile === 'string') {

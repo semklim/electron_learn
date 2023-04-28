@@ -1,1 +1,3 @@
 node_modules
+electron-build/win-unpacked
+.vscode

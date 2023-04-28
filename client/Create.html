@@ -4,11 +4,11 @@
 	<style>
 
 		body,html{
-			/* -webkit-app-region: drag; */
 			margin: 0;
 			padding: 0;
 			width: 100%;
 			height: 100%;
+			overflow: hidden;
 		}
 		.container{
 			height: 80%;
@@ -29,15 +29,22 @@
 			color: white;
 			font-weight: 900;
 		}
+		.info{
+			position: absolute;
+			top: 20%;
+			width: 100%;
+		}
+
 	</style>
 </head>
 <body>
-<div class="drag"> Drag me</div>
+<div class="drag"> Drag me </div>
+<div class="info">
+	<span id="versionInfo"></span>
+	<span id="updateInfo"></span>
+</div>
 <div class="container"><button id="add"> + </button></div>
-<script>
-	const { ipcRenderer } = require(`electron`);
 
-	add.addEventListener('click', () => ipcRenderer.send('createNewWindow'));
-</script>
+<script src="./Script.js"></script>
 </body>
 </html>
