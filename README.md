@@ -25,7 +25,7 @@ npm run dev
 
 ## Releases
 
-This repository includes [releases](https://github.com/semklim/electron_learn/releases) that you can download and run on your computer. Each release includes a pre-built version of the app for macOS, Windows, and Linux.
+This repository includes [releases](https://github.com/semklim/electron_learn/releases) that you can download and run on your computer. All release version of the app for Windows.
 
 ## Updating the App
 
