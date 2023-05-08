@@ -1,6 +1,6 @@
 {
   "name": "semklim-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "learn Electron",
   "main": "index.js",
   "scripts": {
