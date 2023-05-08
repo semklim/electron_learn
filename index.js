@@ -48,7 +48,7 @@ const setUpdaterListeners = () => {
   });
 
   autoUpdater.on('update-not-available', (info) => {
-    showMSGGUI('update', 'It`s latest version');
+    showMSGGUI('update-color-signal', 'It`s latest version');
   });
 
   autoUpdater.on('update-downloaded', (info) => {

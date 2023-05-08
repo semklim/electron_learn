@@ -14,8 +14,19 @@ ipcRenderer.on('update', (event, arg) => {
 });
 
 ipcRenderer.on('update-color-signal', (event, arg) => {
-  const rest = arg[1] ? arg[1].version : '';
-  updateInfo.textContent = arg[0] + ' ' + rest;
+  if (typeof arg === 'string') {
+    updateInfo.textContent = arg;
+  } else {
+    const rest = arg[1] ? arg[1].version : '';
+    updateInfo.textContent = arg[0] + ' ' + rest;
+  }
+  updateInfo.setAttribute('style', `
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  `);
 });
 
 ipcRenderer.on('ver', (event, arg) => {
